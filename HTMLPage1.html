@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+	<!-- Styles  -->
+	<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+	
+	<!-- Scripts -->
+	<script src="js/vendor/jquery-1.11.1.min.js"></script>
+	<script src="js/vendor/jquery.easings.min.js"></script>
+	<!-- This following line needed in the case of using the plugin option `scrollOverflow:true` -->
+	<script type="text/javascript" src="vendors/jquery.slimscroll.min.js"></script>
+
+	<script type="text/javascript" src="js/vendor/jquery.fullPage.js"></script>
+
+
+
+   <script type="text/javascript">
+
+        $(document).ready(function() {
+
+            $('#fullpage').fullpage({
+				//Navigation
+				menu:false,
+				anchors:['firstSlide','secondSlide'],
+				navigation: true,
+				navigationPosition : 'left',
+				navigationTooltips: ['Home','tamere'],
+				slidesNavigation: true,
+				slidesNavPosition: 'top',
+				
+				//Scrolling
+				css3: true,
+                sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
+				scrollingSpeed: 100,
+				
+				        onSlideLeave: function( anchorLink, index, slideIndex, direction){
+            //leaving the first slide of the 2nd Section to the right
+            if(index == 2 && slideIndex == 0 && direction == 'right'){
+                alert("Leaving the fist slide!!");
+            }
+
+            //leaving the 3rd slide of the 2nd Section to the left
+            if(index == 2 && slideIndex == 2 && direction == 'left'){
+                alert("Going to slide 2! ");
+            }
+        }
+
+
+
+				
+            });
+
+        });
+		
+		
+
+
+
+    </script>
+
+
+
+    <style>
+
+        .section{
+
+            font-size: 6em;
+
+            text-align: center;
+
+        }
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+    <div id="fullpage">
+
+        <div class="section" data-anchor="firstSection">Section 1</div>
+
+        <div class="section" data-anchor="secondSection">
+
+            <div class="slide">Section 2 Slide 1</div>
+
+            <div class="slide">Section 2 Slide 2</div>
+
+            <div class="slide">Section 2 Slide 3</div>
+
+        </div>
+
+        <div class="section">Section 3</div>
+		
+		<div class="section">Section 4<div>
+    </div>            
+
+</body> 
+
+</html>
