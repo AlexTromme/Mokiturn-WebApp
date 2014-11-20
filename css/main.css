@@ -4,10 +4,28 @@
    Author's custom styles
    ========================================================================== */
 
+#carre{
+	background-color : red;
+	width: 100px;
+	height: 100px;
+	-webkit-animation: myfirst 5s; /* Chrome, Safari, Opera */
+    animation: myfirst 5s;
+}
 
 
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myfirst {
+    from {background: red;}
+	50% {width:200px;}
+    to {background: yellow;}
+ }
 
-
+/* Standard syntax */
+@keyframes myfirst {
+    from {background: red;}
+	50% {width:200px;}
+    to {background: yellow;}
+ } 
 
 
 
